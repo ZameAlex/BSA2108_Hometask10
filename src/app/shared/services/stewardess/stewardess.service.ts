@@ -8,7 +8,7 @@ import { Stewardess } from '../../models/stewardess';
 })
 export class StewardessService {
 
-  private url='tewardesss/';
+  private url='stewardess/';
   
   constructor(private http: HttpClient) { }
 
