@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '../../../../../node_modules/@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Departure } from '../../models/departure';
 import { Base_Url } from '../../config';
 
@@ -11,15 +11,15 @@ export class DepartureService {
 
   constructor(private http: HttpClient) { }
 
-  getCrews(){
+  getDepartures(){
     return this.http.get<Departure[]>(Base_Url + this.url);
   }
 
-  getCrewById(id: number){
+  getDepartureById(id: number){
     return this.http.get<Departure>(Base_Url + this.url+id);
   }
 
-  createCrew(departure: Departure){
+  createDeparture(departure: Departure){
     const headers = new HttpHeaders().set('content-type', 'application/json');
     let body = {
       flight: departure.flight,
@@ -32,7 +32,7 @@ export class DepartureService {
     });
   }
 
-  updateCrew(id:number, departure:Departure){
+  updateDeparture(id:number, departure:Departure){
     const headers = new HttpHeaders().set('content-type', 'application/json');
     let body = {
       flight: departure.flight,
@@ -45,7 +45,7 @@ export class DepartureService {
     });
   }
 
-  deleteCrew(id:number){
+  deleteDeparture(id:number){
     const headers = new HttpHeaders().set('content-type', 'application/json');
     return this.http.delete(Base_Url + this.url + id, {
       headers
