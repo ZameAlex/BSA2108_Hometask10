@@ -1,9 +1,9 @@
 export interface Type   {
     id:  number,
-    Model: string,
-    Places: number,
+    model: string,
+    places: number,
     speed: number,
-    FleightLength: number,
-    MaxMass: number,
-    MaxHeight: number;
+    fleightLength: number,
+    maxMass: number,
+    maxHeight: number;
 }

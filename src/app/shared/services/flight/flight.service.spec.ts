@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { .\Flight\FlightService } from './.\flight\flight.service';
+import { FlightService } from './flight.service';
 
 describe('.\Flight\FlightService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [.\Flight\FlightService]
+      providers: [FlightService]
     });
   });
 
-  it('should be created', inject([.\Flight\FlightService], (service: .\Flight\FlightService) => {
+  it('should be created', inject([FlightService], (service: FlightService) => {
     expect(service).toBeTruthy();
   }));
 });
