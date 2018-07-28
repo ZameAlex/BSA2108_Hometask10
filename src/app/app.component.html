@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!--<div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,5 +16,21 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
-
+</ul>-->
+<header>
+  <div class="container">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-lg" (click)="goToPlanes()">Planes</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="goToTypes()">Planes Types</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="goToPilots()">Pilots</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="goToStewardesses()">Stewardesses</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="goToCrews()">Crews</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="goToFlights()">Flights</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="goToDepartures()">Departures</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="goToTickets()">Tickets</button>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

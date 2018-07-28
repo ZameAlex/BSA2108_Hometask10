@@ -1,3 +1,36 @@
-<p>
-  departure-list works!
-</p>
+
+  <div>
+    <br>
+    <button (click)="createNewDeparture()" class="btn btn-success">Add new</button>
+    <br>
+    <br>
+    <form *ngIf="isAdd" #form="ngForm">
+      <label for="date">Date:</label>
+      <input [(ngModel)]="newDeparture.date" class="form-control" id="date" type="datetime">
+      <label for="flight">Flight:</label>
+      <input [(ngModel)]="newDeparture.flight" class="form-control" id="flight" type="text">
+      <label for="crew">Crew:</label>
+      <input [(ngModel)]="newDeparture.crew" class="form-control" id="crew" type="number">
+      <label for="plane">Plane:</label>
+      <input [(ngModel)]="newDeparture.plane" class="form-control" id="plane" type="number">
+      <button (click)="addDeparture(form)" type="submit">Add</button>
+    </form>
+    <br>
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Date</th>
+          <th>Flight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let departure of departures">
+          <td>{{departure.id}}</td>
+          <td>{{departure.date | date: 'medium'}}</td>
+          <td>{{departure.number}}</td>
+          <td><button (click)="navigateToDetail(departure.id)" class="btn btn-info">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

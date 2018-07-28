@@ -1,3 +1,37 @@
-<p>
-  pilot-list works!
-</p>
+<div>
+    <br>
+    <button (click)="createNewPilot()" class="btn btn-success">Add new</button>
+    <br>
+    <br>
+    <form *ngIf="isAdd" #form="ngForm">
+      <label for="firstName">First name</label>
+      <input [(ngModel)]="newPilot.firstName" class="form-control" id="firstName" type="text">
+      <label for="lastName">Last name</label>
+      <input [(ngModel)]="newPilot.lastName" class="form-control" id="lastName" type="text">
+      <label for="birthday">Birthday</label>
+      <input [(ngModel)]="newPilot.birthday" class="form-control" id="birthday" type="text">
+      <label for="experience">Experience</label>
+      <input [(ngModel)]="newPilot.experience" class="form-control" id="experience" type="text">
+      <button (click)="addPilot(form)" type="submit">Add</button>
+    </form>
+    <br>
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>FirstName</th>
+          <th>Birthday</th>
+          <th>Experience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pilot of pilots">
+          <td>{{pilot.id}}</td>
+          <td>{{pilot.firstName}}</td>
+          <td>{{pilot.birthday | date:'medium'}}</td>
+          <td>{{pilot.experience}}</td>
+          <td><button (click)="navigateToDetail(pilot.id)" class="btn btn-info">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

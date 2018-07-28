@@ -1,3 +1,24 @@
-<p>
-  ticket-details works!
-</p>
+<div *ngIf="ticket != undefined">
+
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Price</th>
+          <th>Flight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ticket.id}}</td>
+          <td><input [(ngModel)]="ticket.price" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="ticket.number" [readonly]="isReadonly"></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button (click)="deleteTicket()" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+    
+    <button (click)="editTicket()" *ngIf="isReadonly" class ="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button (click)="updateTicket(Ticket.id)" *ngIf="!isReadonly" class ="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+    </div>

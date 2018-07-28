@@ -1,3 +1,28 @@
-<p>
-  plane-details works!
-</p>
+<div *ngIf="plane != undefined">
+
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Created</th>
+          <th>Expires</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{plane.id}}</td>
+          <td><input [(ngModel)]="plane.name" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="plane.created" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="plane.expires" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="plane.type" [readonly]="isReadonly"></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button (click)="deletePlane()" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+    
+    <button (click)="editPlane()" *ngIf="isReadonly" class ="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button (click)="updatePlane(plane.id)" *ngIf="!isReadonly" class ="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+    </div>

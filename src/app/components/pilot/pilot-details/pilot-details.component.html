@@ -1,3 +1,28 @@
-<p>
-  pilot-details works!
-</p>
+<div *ngIf="pilot != undefined">
+
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Birthday</th>
+          <th>Experience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{pilot.id}}</td>
+          <td><input [(ngModel)]="pilot.firstName" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="pilot.lastName" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="pilot.birthday" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="pilot.experience" [readonly]="isReadonly"></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button (click)="deletePilot()" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+    
+    <button (click)="editPilot()" *ngIf="isReadonly" class ="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button (click)="updatePilot(pilot.id)" *ngIf="!isReadonly" class ="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+    </div>

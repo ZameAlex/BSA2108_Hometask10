@@ -1,3 +1,26 @@
-<p>
-  stewardess-details works!
-</p>
+<div *ngIf="stewardess != undefined">
+
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Birthday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{stewardess.id}}</td>
+          <td><input [(ngModel)]="stewardess.firstName" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="stewardess.lastName" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="stewardess.birthday" [readonly]="isReadonly"></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button (click)="deleteStewardess()" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+    
+    <button (click)="editStewardess()" *ngIf="isReadonly" class ="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button (click)="updateStewardess(stewardess.id)" *ngIf="!isReadonly" class ="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+    </div>

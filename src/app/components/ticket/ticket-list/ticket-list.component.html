@@ -1,3 +1,29 @@
-<p>
-  ticket-list works!
-</p>
+<div>
+    <br>
+    <button (click)="createNewTicket()" class="btn btn-success">Add new</button>
+    <br>
+    <br>
+    <form *ngIf="isAdd" #form="ngForm">
+      <label for="price">Price</label>
+      <input [(ngModel)]="newTicket.price" class="form-control" id="price" type="text">
+      <label for="flight">Flight</label>
+      <input [(ngModel)]="newTicket.number" class="form-control" id="flight" type="text">
+      <button (click)="addTicket(form)" type="submit">Add</button>
+    </form>
+    <br>
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Flight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of tickets">
+          <td>{{ticket.id}}</td>
+          <td>{{ticket.number}}</td>
+          <td><button (click)="navigateToDetail(ticket.id)" class="btn btn-info">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,3 +1,30 @@
-<p>
-  flight-details works!
-</p>
+<div *ngIf="flight != undefined">
+
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Departure point</th>
+          <th>Destination point</th>
+          <th>Departure time</th>
+          <th>Destination time</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{flight.id}}</td>
+          <td><input [(ngModel)]="flight.departurePoint" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="flight.destination" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="flight.departureTime" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="flight.destinationTime" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="flight.number" [readonly]="isReadonly"></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button (click)="deleteFlight()" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+    
+    <button (click)="editFlight()" *ngIf="isReadonly" class ="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button (click)="updateFlight(flight.id)" *ngIf="!isReadonly" class ="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+    </div>

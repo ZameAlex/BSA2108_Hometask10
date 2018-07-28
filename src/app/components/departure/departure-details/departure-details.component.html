@@ -1,3 +1,28 @@
-<p>
-  departure-details works!
-</p>
+<div *ngIf="departure != undefined">
+
+<table class="table table-stripped" >
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Date</th>
+      <th>Flight</th>
+      <th>Crew</th>
+      <th>Plane</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{departure.id}}</td>
+      <td><input [(ngModel)]="departure.date" [readonly]="isReadonly"></td>
+      <td><input [(ngModel)]="departure.number" [readonly]="isReadonly"></td>
+      <td><input [(ngModel)]="departure.crew" [readonly]="isReadonly"></td>
+      <td><input [(ngModel)]="departure.plane" [readonly]="isReadonly"></td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="deleteDeparture()" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+
+<button (click)="editDeparture()" *ngIf="isReadonly" class ="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+<button (click)="updateDeparture(departure.id)" *ngIf="!isReadonly" class ="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+</div>

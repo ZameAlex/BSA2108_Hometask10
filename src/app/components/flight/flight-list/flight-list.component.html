@@ -1,3 +1,39 @@
-<p>
-  flight-list works!
-</p>
+<div>
+    <br>
+    <button (click)="createNewFlight()" class="btn btn-success">Add new</button>
+    <br>
+    <br>
+    <form *ngIf="isAdd" #form="ngForm">
+      <label for="departurePoint">Start point:</label>
+      <input [(ngModel)]="newFlight.departurePoint" class="form-control" id="departurePoint" type="text">
+      <label for="destination">End point:</label>
+      <input [(ngModel)]="newFlight.destination" class="form-control" id="destination" type="text">
+      <label for="departureTime">Start time:</label>
+      <input [(ngModel)]="newFlight.departureTime" class="form-control" id="departureTime" type="text">
+      <label for="destinationTime">End time:</label>
+      <input [(ngModel)]="newFlight.destinationTime" class="form-control" id="destinationTime" type="text">
+      <label for="number">Number:</label>
+      <input [(ngModel)]="newFlight.number" class="form-control" id="number" type="text">
+      <button (click)="addFlight(form)" type="submit">Add</button>
+    </form>
+    <br>
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Start point</th>
+          <th>End point</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td>{{flight.id}}</td>
+          <td>{{flight.departurePoint}}</td>
+          <td>{{flight.destination}}</td>
+          <td>{{flight.number}}</td>
+          <td><button (click)="navigateToDetail(flight.id)" class="btn btn-info">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

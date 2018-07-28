@@ -3,8 +3,8 @@ import { Plane } from "./plane";
 
 export interface Departure  {
     id: number,
-    flight: string,
+    number: string,
     date: string,
-    crew: Crew,
-    plane: Plane,
+    crew: number,
+    plane: number,
 }

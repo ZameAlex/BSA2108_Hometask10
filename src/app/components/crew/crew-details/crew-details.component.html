@@ -1,3 +1,26 @@
-<p>
-  crew-details works!
-</p>
+<br>
+
+<div *ngIf="crew != undefined">
+  <table class="table table-stripped" >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Pilots name</th>
+        <th>Stewardess count</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{crew.id}}</td>
+        <td>{{crew.pilot.firstName}}</td>
+        <td>{{crew.stewardess.length}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+
+<button (click)="deleteCrew()" class = "btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+
+

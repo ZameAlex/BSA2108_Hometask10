@@ -1,3 +1,32 @@
-<p>
-  type-details works!
-</p>
+<div *ngIf="type != undefined">
+
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Model</th>
+          <th>Fleight length</th>
+          <th>Maximum height</th>
+          <th>Maximum mass</th>
+          <th>Places</th>
+          <th>Speed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{type.id}}</td>
+          <td><input [(ngModel)]="type.model" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="type.fleightLength" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="type.maxHeight" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="type.maxMass" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="type.places" [readonly]="isReadonly"></td>
+          <td><input [(ngModel)]="type.speed" [readonly]="isReadonly"></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button (click)="deletetype()" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+    
+    <button (click)="edittype()" *ngIf="isReadonly" class ="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+    <button (click)="updatetype(type.id)" *ngIf="!isReadonly" class ="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+    </div>

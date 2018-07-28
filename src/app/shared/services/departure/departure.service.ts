@@ -22,7 +22,7 @@ export class DepartureService {
   createDeparture(departure: Departure){
     const headers = new HttpHeaders().set('content-type', 'application/json');
     let body = {
-      flight: departure.flight,
+      number: departure.number,
       date: departure.date,
       crew: departure.crew,
       plane: departure.plane
@@ -35,7 +35,7 @@ export class DepartureService {
   updateDeparture(id:number, departure:Departure){
     const headers = new HttpHeaders().set('content-type', 'application/json');
     let body = {
-      flight: departure.flight,
+      number: departure.number,
       date: departure.date,
       crew: departure.crew,
       plane: departure.plane

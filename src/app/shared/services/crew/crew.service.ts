@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Base_Url } from '../../config'
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Crew } from '../../models/crew';
-import { mapToExpression } from '@angular/compiler/src/render3/view/util';
-import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +12,8 @@ export class CrewService {
   constructor(private http: HttpClient) { }
 
   getCrews(){
-    return this.http.get<Crew[]>(Base_Url + this.url);
+    var result =this.http.get<Crew[]>(Base_Url + this.url);
+    return result;
   }
 
   getCrewById(id: number){

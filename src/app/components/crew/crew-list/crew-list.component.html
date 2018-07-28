@@ -1,3 +1,31 @@
-<p>
-  crew-list works!
-</p>
+
+  <div>
+    <br>
+    <!--<button (click)="createNewCrew()" class="btn btn-success">Add new</button>
+    <br>
+    <br>
+    <form *ngIf="isAdd" #form="ngForm">
+      <label>Pilot Id</label>
+      <input [(ngModel)]="newCrew.pilot.id" name="pilotId">
+      <button (click)="addCrew(form)" type="submit">Add</button>
+    </form>-->
+    <br>
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Pilots name</th>
+          <th>Stewardess count</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crew of crews">
+          <td>{{crew.id}}</td>
+          <td>{{crew.pilot.firstName}}</td>
+          <td>{{crew.stewardess.length}}</td>
+          <td><button (click)="navigateToDetail(crew.id)" class="btn btn-info">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

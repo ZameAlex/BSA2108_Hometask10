@@ -1,3 +1,33 @@
-<p>
-  stewardess-list works!
-</p>
+<div>
+    <br>
+    <button (click)="createNewStewardess()" class="btn btn-success">Add new</button>
+    <br>
+    <br>
+    <form *ngIf="isAdd" #form="ngForm">
+      <label for="firstName">First name</label>
+      <input [(ngModel)]="newStewardess.firstName" class="form-control" id="firstName" type="text">
+      <label for="lastName">Last name</label>
+      <input [(ngModel)]="newStewardess.lastName" class="form-control" id="lastName" type="text">
+      <label for="birthday">Birthday</label>
+      <input [(ngModel)]="newStewardess.birthday" class="form-control" id="birthday" type="text">
+      <button (click)="addstewardess(form)" type="submit">Add</button>
+    </form>
+    <br>
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>FirstName</th>
+          <th>Birthday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stewardess of stewardesses">
+          <td>{{stewardess.id}}</td>
+          <td>{{stewardess.firstName}}</td>
+          <td>{{stewardess.birthday | date:'medium'}}</td>
+          <td><button (click)="navigateToDetail(stewardess.id)" class="btn btn-info">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
