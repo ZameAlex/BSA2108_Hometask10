@@ -25,7 +25,7 @@ export class TicketService {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     let body = {
       price: ticket.price,
-      flight: ticket.flight
+      flight: ticket.number
     };
     return this.http.post<Ticket>(Base_Url + this.url, body, {
       headers
@@ -36,7 +36,7 @@ export class TicketService {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     let body = {
       price: ticket.price,
-      flight: ticket.flight
+      flight: ticket.number
     };
     return this.http.post<Ticket>(Base_Url + this.url + id, body, {
       headers

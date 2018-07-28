@@ -5,15 +5,15 @@
     <br>
     <form *ngIf="isAdd" #form="ngForm">
       <label for="departurePoint">Start point:</label>
-      <input [(ngModel)]="newFlight.departurePoint" class="form-control" id="departurePoint" type="text">
+      <input name="departurePoint" [(ngModel)]="newFlight.departurePoint" class="form-control" id="departurePoint" type="text">
       <label for="destination">End point:</label>
-      <input [(ngModel)]="newFlight.destination" class="form-control" id="destination" type="text">
+      <input name="destination" [(ngModel)]="newFlight.destination" class="form-control" id="destination" type="text">
       <label for="departureTime">Start time:</label>
-      <input [(ngModel)]="newFlight.departureTime" class="form-control" id="departureTime" type="text">
+      <input name="departureTime" [(ngModel)]="newFlight.departureTime" class="form-control" id="departureTime" type="text">
       <label for="destinationTime">End time:</label>
-      <input [(ngModel)]="newFlight.destinationTime" class="form-control" id="destinationTime" type="text">
+      <input name="destinationTime" [(ngModel)]="newFlight.destinationTime" class="form-control" id="destinationTime" type="text">
       <label for="number">Number:</label>
-      <input [(ngModel)]="newFlight.number" class="form-control" id="number" type="text">
+      <input name="number" [(ngModel)]="newFlight.number" class="form-control" id="number" type="text">
       <button (click)="addFlight(form)" type="submit">Add</button>
     </form>
     <br>

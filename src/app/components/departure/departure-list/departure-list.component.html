@@ -6,13 +6,13 @@
     <br>
     <form *ngIf="isAdd" #form="ngForm">
       <label for="date">Date:</label>
-      <input [(ngModel)]="newDeparture.date" class="form-control" id="date" type="datetime">
+      <input name="date" [(ngModel)]="newDeparture.date" class="form-control" id="date" type="datetime">
       <label for="flight">Flight:</label>
-      <input [(ngModel)]="newDeparture.flight" class="form-control" id="flight" type="text">
+      <input name="flight" [(ngModel)]="newDeparture.flight" class="form-control" id="flight" type="text">
       <label for="crew">Crew:</label>
-      <input [(ngModel)]="newDeparture.crew" class="form-control" id="crew" type="number">
+      <input name="crew" [(ngModel)]="newDeparture.crew" class="form-control" id="crew" type="number">
       <label for="plane">Plane:</label>
-      <input [(ngModel)]="newDeparture.plane" class="form-control" id="plane" type="number">
+      <input name="plane" [(ngModel)]="newDeparture.plane" class="form-control" id="plane" type="number">
       <button (click)="addDeparture(form)" type="submit">Add</button>
     </form>
     <br>

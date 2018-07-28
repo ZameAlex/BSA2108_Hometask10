@@ -5,11 +5,11 @@
     <br>
     <form *ngIf="isAdd" #form="ngForm">
       <label for="firstName">First name</label>
-      <input [(ngModel)]="newStewardess.firstName" class="form-control" id="firstName" type="text">
+      <input name ="firstName" [(ngModel)]="newStewardess.firstName" class="form-control" id="firstName" type="text">
       <label for="lastName">Last name</label>
-      <input [(ngModel)]="newStewardess.lastName" class="form-control" id="lastName" type="text">
+      <input name ="lastName" [(ngModel)]="newStewardess.lastName" class="form-control" id="lastName" type="text">
       <label for="birthday">Birthday</label>
-      <input [(ngModel)]="newStewardess.birthday" class="form-control" id="birthday" type="text">
+      <input name ="birthday" [(ngModel)]="newStewardess.birthday" class="form-control" id="birthday" type="text">
       <button (click)="addstewardess(form)" type="submit">Add</button>
     </form>
     <br>

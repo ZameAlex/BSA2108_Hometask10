@@ -5,9 +5,9 @@
     <br>
     <form *ngIf="isAdd" #form="ngForm">
       <label for="price">Price</label>
-      <input [(ngModel)]="newTicket.price" class="form-control" id="price" type="text">
+      <input name = "price" [(ngModel)]="newTicket.price" class="form-control" id="price" type="text">
       <label for="flight">Flight</label>
-      <input [(ngModel)]="newTicket.number" class="form-control" id="flight" type="text">
+      <input name = "number" [(ngModel)]="newTicket.number" class="form-control" id="flight" type="text">
       <button (click)="addTicket(form)" type="submit">Add</button>
     </form>
     <br>

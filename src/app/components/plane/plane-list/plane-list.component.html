@@ -5,13 +5,13 @@
     <br>
     <form *ngIf="isAdd" #form="ngForm">
       <label for="name">Name</label>
-      <input [(ngModel)]="newPlane.name" class="form-control" id="name" type="text">
+      <input name ="name" [(ngModel)]="newPlane.name" class="form-control" id="name" type="text">
       <label for="created">Created</label>
-      <input [(ngModel)]="newPlane.created" class="form-control" id="created" type="text">
+      <input name ="created" [(ngModel)]="newPlane.created" class="form-control" id="created" type="text">
       <label for="expires">Expires</label>
-      <input [(ngModel)]="newPlane.expires" class="form-control" id="expires" type="text">
+      <input name ="expires" [(ngModel)]="newPlane.expires" class="form-control" id="expires" type="text">
       <label for="type">Type</label>
-      <input [(ngModel)]="newPlane.type" class="form-control" id="type" type="number">
+      <input name ="type" [(ngModel)]="newPlane.type" class="form-control" id="type" type="number">
       <button (click)="addPlane(form)" type="submit">Add</button>
     </form>
     <br>

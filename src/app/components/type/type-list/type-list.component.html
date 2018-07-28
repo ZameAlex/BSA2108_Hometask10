@@ -5,22 +5,22 @@
     <br>
     <form *ngIf="isAdd" #form="ngForm">
       <label for="model">Model</label>
-      <input [(ngModel)]="newType.model" class="form-control" id="model" type="text">
-      
+      <input name="model" [(ngModel)]="newType.model" class="form-control" id="model" type="text">
+
       <label for="fleightLength">Fleight length</label>
-      <input [(ngModel)]="newType.fleightLength" class="form-control" id="fleightLength" type="text">
+      <input name="fleightLength" [(ngModel)]="newType.fleightLength" class="form-control" id="fleightLength" type="text">
 
       <label for="maxHeight">Maximum height</label>
-      <input [(ngModel)]="newType.maxHeight" class="form-control" id="maxHeight" type="text">
+      <input name="maxHeight" [(ngModel)]="newType.maxHeight" class="form-control" id="maxHeight" type="text">
 
       <label for="maxMass">Maximum mass</label>
-      <input [(ngModel)]="newType.maxMass" class="form-control" id="maxMass" type="text">
+      <input name="maxMass" [(ngModel)]="newType.maxMass" class="form-control" id="maxMass" type="text">
 
       <label for="places">Places</label>
-      <input [(ngModel)]="newType.places" class="form-control" id="places" type="text">
+      <input name="places" [(ngModel)]="newType.places" class="form-control" id="places" type="text">
 
       <label for="speed">Speed</label>
-      <input [(ngModel)]="newType.speed" class="form-control" id="speed" type="text">
+      <input name="speed" [(ngModel)]="newType.speed" class="form-control" id="speed" type="text">
 
     
       <button (click)="addType(form)" type="submit">Add</button>
